@@ -1,0 +1,178 @@
+<!-- На этой странице должны быть:
+1) что-то, на что мы будем кликать (например тег <button>, но это необязательно. Вы можете сделать <div> или же просто вставить картинку)
+2) Счётчик "валюты". За каждый клик игрок будет получать определённое количество валюты, этот счётчик также нужно оформить.
+3) Небольшой магазин улучшений. В нем должны быть следующие улучшения — "Пассивный прирост валюты", "количество валюты за клик"
+У каждого улучшения должна быть некая кнопка "купить", 
+а также указана цена (для начала просто укажите 0, во время разработки кликера мы это поменяем). 
+Любое улучшение можно будет покупать неограниченное количество раз.
+
+Оформить страничку можно как угодно. Например для улучшений можно нарисовать/найти картинку. 
+А вместо кнопки для кликов сделать картинку печеньки, как в куки кликере. Включайте фантазию) -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- кодировка -->
+    <meta charset="utf-8">
+
+    <!-- название -->
+    <title>Котоглад</title>
+
+    <!-- стили -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+
+    <!-- шрифт -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap" rel="stylesheet">
+
+  </head>
+  <body>  
+    <div class="wrapper">
+        <h1>Погладь кота</h1>
+
+        <!-- таблица -->
+        <table>
+          <tr>
+            <td> <!-- первый столбец -->
+              <button type="submit" class="Click" id="Click">
+                  <image src="images\Первый.png" class="Click-img" id="Click-img">
+              </button>
+            </td> 
+
+            <td> <!-- второй столбец -->
+                <h2 style="white-space: pre-wrap;" id = "counter">         Мур: 0</h2>
+            </td>
+          </tr>
+        </table>
+        <p id="text-passive">Пассивный прирост: 0</p>
+        <p id="text-active">Радость за клик: 1</p>
+        <p id="auto">Автоматизация: не куплено</p>
+        <div class="wrapper">
+          <table class="table_costs" width="600px" border="1">
+            <tr>
+              <td class="td1">
+                <table class="table_int" cellspacing="0">
+                  <caption style="white-space: pre-wrap;"><h2>Игрушки</h2>Пассивный прирост
+                  </caption>
+                    <!-- некоторые изменяют внешний вид сайта, пассивный прирост -->
+                  <tr>
+                    <td class="name">Мячик <nobr class="growth1">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="automatic">1 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Палочка <nobr class="growth1">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="automatic">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Мышка <nobr class="growth1">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="automatic">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Коробочка <nobr class="growth1">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="automatic">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Маленький друг <nobr class="growth1">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="automatic">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Кошачий домик <nobr class="growth1">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="automatic">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Автоматизация</td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="all-automatic">0 Мур</a></td>
+                  </tr>
+                </table>
+              </td>
+              <td class="td2">
+                <table class="table_int" cellspacing="0">
+                  <caption style="white-space: pre-wrap;"><h2>Коты</h2>Больше радости за клик
+                  </caption>
+                    <!-- тут другие коты, прирост за клик -->
+                  <tr>
+                    <td class="name">Пушин <nobr class="growth2">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="amount">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Луны <nobr class="growth2">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="amount">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Котик с рыбкой <nobr class="growth2">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="amount">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Котёночек <nobr class="growth2">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="amount">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Ведьмочка <nobr class="growth2">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="amount">0 Мур</a></td>
+                  </tr>
+                  <tr>
+                    <td class="name">Котоданго <nobr class="growth2">[+2/c]</nobr></td>
+                    <td class="td-button"><a href="#" class="button-buy" upgrade-type="amount">0 Мур</a></td>
+                  </tr>
+                </table>
+              </td>
+              <td class="td3">
+                
+                <table class="other">
+                  <caption style="white-space: pre-wrap;"><h2>Другое</h2>Выбрать кота</caption>
+                  <!-- коты закрыты пока не куплены -->
+                  <tr>
+                    <td>
+                      <button type="submit" class="Cat">
+                      <image src="images\Первый.png" width="60" height="43">
+                      </button>
+                    </td>
+                    <td>
+                      <button type="submit" class="Cat">
+                        <image src="images\Луны.png" width="60" height="46">
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="submit" class="Cat">
+                        <image src="images\Котик-с-рыбкой.png" width="60" height="58">
+                      </button>
+                    </td>
+                    <td>
+                      <button type="submit" class="Cat">
+                        <image src="images\Котёночек.png" width="60" height="66">
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="submit" class="Cat">
+                        <image src="images\Котоведбмочка.png" width="60" height="75">
+                      </button>
+                    </td>
+                    <td>
+                      <button type="submit" class="Cat">
+                        <image src="images\Данго.png" width="60" height="87">
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://vk.com/id418464813" target="_blank"><img src="images/вк.png" width="60" height="56"></a>
+                    </td>
+                    <td>
+                      <a href="https://t.me/saphielle" target="_blank"><img src="images/тг.png" width="60" height="59"></a>
+                    </td>
+                  </tr>
+                </table>
+                <a href="#" class="button-buy" upgrade-type="plusValue">Тест</a>
+            </tr>
+          </table>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html> 
