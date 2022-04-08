@@ -130,7 +130,7 @@ for (const i in allAutomaticButtons) {
             allAutomaticButtons[i].innerText = "Включить"
         }
         else if (changer == false) {
-            setInterval(autoBuy, 10 ** 3)
+            intervalID = setInterval(autoBuy, 10 ** 3)
             changer = true
             document.getElementById("auto").innerText = "Автоматизация: ✓"
             allAutomaticButtons[i].innerText = "Отключить"
